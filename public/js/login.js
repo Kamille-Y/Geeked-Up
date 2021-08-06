@@ -3,8 +3,9 @@ const loginFormHandler = async function(event) {
 
   const usernameEl = document.querySelector('#username-input-login');
   const passwordEl = document.querySelector('#password-input-login');
-
-  const response = await fetch('/api/userRoutes.js/login', {
+console.log(usernameEl.value)
+console.log(passwordEl.value)
+  const response = await fetch('/api/user/login', {
     method: 'POST',
     body: JSON.stringify({
       username: usernameEl.value,
@@ -12,7 +13,7 @@ const loginFormHandler = async function(event) {
     }),
     headers: { 'Content-Type': 'application/json' },
   });
-58690
+  console.log(response)
   if (response.ok) {
     document.location.replace('/dashboard');
   } else {
